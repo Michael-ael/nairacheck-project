@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables */
+:root{
+    --primary-color: #343a40;
+}
+
+body{
+    line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
+    background: #fafafa;
+}
+
+p{
+    padding: 10px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+/* navbar */
+.navbar{
+    height: 70px;
+    background: rgba(255,225,225,0.1);
+    padding: 10px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.3);
+}
+
+.navbar .logo h1{
+    text-align: center;
+    text-transform: uppercase;
+    justify-self: center;
+    text-shadow: 3px 2px 7px rgba(0,0,0,0.3);
+    font-family: sans-serif;
+    animation: slideInFromTop 1s ease-in-out 0.3s;
+
+}
+
+/* main */
+
+.container .grid{
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+.main .content .top-buttons{
+    margin: 10px 10px;
+    justify-self: left;
+    width: auto;
+    animation: slideInFromLeft 4s ease-in-out 0.3s;
+}
+
+.main .content .top-buttons a{
+    font-size: 12px;
+    padding: 0.5rem;
+    font-weight: 400;
+}
+
+.content .grid .card{
+    border-radius: 10px;
+    background: rgba(255,225,225,0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(225, 225, 225, 0.5);
+    border-left: 1px solid rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(5px);
+    animation: slideInFromRight 3s ease-in-out 0.3s;
+    overflow-x: hidden;
+}
+
+.content .grid .card div{
+    width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.content .grid .card div p{
+    font-weight: bold;
+}
+
+.content .grid .card div p#quote{
+    font-weight: normal !important;
+}
+
+.content .grid .card .button{
+    padding: 20px;
+}
+
+.content .grid .card .button a{
+    padding: 10px;
+    font-size: 15px;
+}
+
+.image-slider{
+    margin: 30px auto;
+}
+
+.image-slider .container .images img{
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    padding: 20px auto;
+}
+
+/* footer */
+.footer .grid{
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+}
+
+.footer .flex div{
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding:0px;
+}
+
+
+.footer .flex div p a{
+    text-decoration: none;
+    color: #b1aeae;
+    font-style: italic;
+}
+.footer .flex div p{
+    padding: 1px 0px;
+    margin: 0px 0px;
+}
+
+/* Animation */
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-150%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(150%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* media queries */
+@media(max-width: 768px){
+    .content .grid .card div{
+        width: 600px;
+    }
+}
+
+@media(max-width: 540px){
+    .content .grid .card{
+        width: 450px;
+        align-items: center;
+    }
+
+    .content .grid .card div{
+        width: 400px;
+    }
+
+    .main .content .top-buttons{
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+@media(max-width: 500px){
+    .content .grid .card{
+        width: 320px;
+    }
+
+    .content .grid .card div{
+        width: 250px;
+    }
+
+    .content .grid .card div p{
+        font-size: 0.9rem;
+    }
+
+    .main .content .top-buttons{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .image-slider .container .images img{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .footer .flex div{
+        padding: 0px 10px;
+        font-size: 0.7rem;
+    }
+    
+}
+
+@media(max-width:320px){
+    .content .grid .card div{
+        width: 200px;
+        padding: 2px;
+    }
+
+    .content .grid .card div p{
+        font-size: 0.7rem;
+        padding: 3px auto;
+    }
+
+    .content .grid .card{
+        width: 250px;
+    }
+
+    .content .grid .card .button a{
+        font-size: 0.7rem;
+    }
+
+    .footer .flex div{
+        font-size: 0.55rem;
+        padding: 0px 5px;
+    }
+}
+
+
